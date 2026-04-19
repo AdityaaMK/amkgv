@@ -1,269 +1,325 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMK Global Ventures LLC</title>
-    <meta
-      name="description"
-      content="AMK Global Ventures specializes in distributed systems, applied AI, and scalable infrastructure."
-    />
-    <link rel="canonical" href="https://amkgv.com" />
-    <meta property="og:title" content="AMK Global Ventures LLC" />
-    <meta
-      property="og:description"
-      content="Specializing in Distributed Systems, Applied AI, and Scalable Infrastructure."
-    />
-    <meta property="og:url" content="https://amkgv.com" />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
-            },
-            colors: {
-              ink: "#f5f7fb",
-              muted: "#9aa4b2",
-              panel: "rgba(255,255,255,0.05)",
-              line: "rgba(255,255,255,0.10)",
-            },
-            boxShadow: {
-              soft: "0 20px 60px rgba(0, 0, 0, 0.35)",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AMK Global Ventures LLC</title>
+		<meta
+			name="description"
+			content="AMK Global Ventures specializes in distributed systems, applied AI, and scalable infrastructure."
+		/>
+		<link rel="canonical" href="https://amkgv.com" />
+		<meta property="og:title" content="AMK Global Ventures LLC" />
+		<meta
+			property="og:description"
+			content="Specializing in Distributed Systems, Applied AI, and Scalable Infrastructure."
+		/>
+		<meta property="og:url" content="https://amkgv.com" />
+		<meta property="og:type" content="website" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: ["Inter", "system-ui", "sans-serif"],
+						},
+						colors: {
+							ink: "#f5f7fb",
+							muted: "#9aa4b2",
+							panel: "rgba(255,255,255,0.05)",
+							line: "rgba(255,255,255,0.10)",
+						},
+						boxShadow: {
+							soft: "0 20px 60px rgba(0, 0, 0, 0.35)",
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
 
-      body {
-        background:
-          radial-gradient(circle at top, rgba(99, 102, 241, 0.16), transparent 30%),
-          radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.1), transparent 20%),
-          #050816;
-      }
-    </style>
-  </head>
-  <body class="font-sans text-ink antialiased">
-    <div id="root"></div>
+			body {
+				background:
+					radial-gradient(
+						circle at top,
+						rgba(99, 102, 241, 0.16),
+						transparent 30%
+					),
+					radial-gradient(
+						circle at 80% 20%,
+						rgba(56, 189, 248, 0.1),
+						transparent 20%
+					),
+					#050816;
+			}
+		</style>
+	</head>
+	<body class="font-sans text-ink antialiased">
+		<div id="root"></div>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script
+			crossorigin
+			src="https://unpkg.com/react@18/umd/react.development.js"
+		></script>
+		<script
+			crossorigin
+			src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+		></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script type="text/babel">
-      const services = [
-        "Applied AI Integration",
-        "Distributed Systems Architecture",
-        "Infrastructure Observability",
-      ];
+		<script type="text/babel">
+			const services = [
+				{
+					title: "Applied AI Integration",
+					description:
+						"Designing and embedding AI workflows into production products, internal tooling, and operational systems.",
+				},
+				{
+					title: "Distributed Systems Architecture",
+					description:
+						"Building resilient backend systems, event-driven platforms, and high-scale architectures for critical workloads.",
+				},
+				{
+					title: "Infrastructure Observability",
+					description:
+						"Improving visibility across services with metrics, tracing, logging, and alerting for faster incident response.",
+				},
+			];
 
-      function SectionLabel({ children }) {
-        return (
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-sky-300/80">
-            {children}
-          </p>
-        );
-      }
+			function SectionLabel({ children }) {
+				return (
+					<p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-sky-300/80">
+						{children}
+					</p>
+				);
+			}
 
-      function App() {
-        return (
-          <div className="min-h-screen">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <header className="flex items-center justify-between py-6">
-                <a href="#top" className="text-sm font-semibold tracking-[0.24em] text-white">
-                  AMK GLOBAL VENTURES
-                </a>
-                <nav className="hidden gap-8 text-sm text-slate-300 md:flex">
-                  <a href="#about" className="transition hover:text-white">About</a>
-                  <a href="#services" className="transition hover:text-white">Services</a>
-                  <a href="#founder" className="transition hover:text-white">Founder</a>
-                  <a href="#clients" className="transition hover:text-white">Clients</a>
-                  <a href="#contact" className="transition hover:text-white">Contact</a>
-                </nav>
-              </header>
+			function App() {
+				return (
+					<div className="min-h-screen">
+						<div className="mx-auto max-w-7xl px-6 lg:px-8">
+							<header className="flex items-center justify-between py-6">
+								<a
+									href="#top"
+									className="text-sm font-semibold tracking-[0.24em] text-white"
+								>
+									AMK GLOBAL VENTURES
+								</a>
+								<nav className="hidden gap-8 text-sm text-slate-300 md:flex">
+									<a href="#about" className="transition hover:text-white">
+										About
+									</a>
+									<a href="#services" className="transition hover:text-white">
+										Services
+									</a>
+									<a href="#founder" className="transition hover:text-white">
+										Founder
+									</a>
+									<a href="#clients" className="transition hover:text-white">
+										Clients
+									</a>
+									<a href="#contact" className="transition hover:text-white">
+										Contact
+									</a>
+								</nav>
+							</header>
 
-              <main id="top">
-                <section className="grid gap-16 py-16 lg:grid-cols-[1.35fr_0.65fr] lg:py-24">
-                  <div className="max-w-3xl">
-                    <div className="inline-flex items-center rounded-full border border-line bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300">
-                      Systems • AI • Infrastructure
-                    </div>
-                    <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                      AMK Global Ventures
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                      Specializing in Distributed Systems, Applied AI, and Scalable Infrastructure.
-                    </p>
-                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                      <a
-                        href="mailto:adityaa@amkgv.com?subject=Discuss%20a%20Project"
-                        className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
-                      >
-                        Discuss a Project
-                      </a>
-                      <a
-                        href="#services"
-                        className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                      >
-                        Explore Services
-                      </a>
-                    </div>
-                  </div>
+							<main id="top">
+								<section className="grid gap-16 py-16 lg:grid-cols-[1.35fr_0.65fr] lg:py-24">
+									<div className="max-w-3xl">
+										<div className="inline-flex items-center rounded-full border border-line bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300">
+											Systems • AI • Infrastructure
+										</div>
+										<h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+											AMK Global Ventures
+										</h1>
+										<p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+											Specializing in Distributed Systems, Applied AI, and
+											Scalable Infrastructure.
+										</p>
+										<div className="mt-10 flex flex-col gap-4 sm:flex-row">
+											<a
+												href="mailto:adityaa@amkgv.com?subject=Discuss%20a%20Project"
+												className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
+											>
+												Discuss a Project
+											</a>
+											<a
+												href="#services"
+												className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+											>
+												Explore Services
+											</a>
+										</div>
+									</div>
 
-                  <div className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur">
-                    <SectionLabel>Core Focus</SectionLabel>
-                    <div className="space-y-6">
-                      <div>
-                        <p className="text-sm text-muted">Built for</p>
-                        <p className="mt-1 text-lg font-semibold text-white">
-                          Mission-critical software systems
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted">Expertise</p>
-                        <p className="mt-1 text-lg font-semibold text-white">
-                          Applied AI, platform engineering, and observability
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted">Approach</p>
-                        <p className="mt-1 text-lg font-semibold text-white">
-                          Minimal, reliable, and engineered to scale
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+									<div className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur">
+										<SectionLabel>Core Focus</SectionLabel>
+										<div className="space-y-6">
+											<div>
+												<p className="text-sm text-muted">Built for</p>
+												<p className="mt-1 text-lg font-semibold text-white">
+													Mission-critical software systems
+												</p>
+											</div>
+											<div>
+												<p className="text-sm text-muted">Expertise</p>
+												<p className="mt-1 text-lg font-semibold text-white">
+													Applied AI, platform engineering, and observability
+												</p>
+											</div>
+											<div>
+												<p className="text-sm text-muted">Approach</p>
+												<p className="mt-1 text-lg font-semibold text-white">
+													Minimal, reliable, and engineered to scale
+												</p>
+											</div>
+										</div>
+									</div>
+								</section>
 
-                <section
-                  id="about"
-                  className="grid gap-8 border-t border-line py-16 lg:grid-cols-[0.45fr_1fr]"
-                >
-                  <div>
-                    <SectionLabel>About</SectionLabel>
-                  </div>
-                  <p className="max-w-3xl text-lg leading-8 text-slate-300">
-                    A technology consulting and software labs entity founded by Adityaa
-                    Magesh Kumar. We build mission-critical systems and observability tools
-                    for the AI-native era.
-                  </p>
-                </section>
+								<section
+									id="about"
+									className="grid gap-8 border-t border-line py-16 lg:grid-cols-[0.45fr_1fr]"
+								>
+									<div>
+										<SectionLabel>About</SectionLabel>
+									</div>
+									<p className="max-w-3xl text-lg leading-8 text-slate-300">
+										A technology consulting and software labs entity founded by
+										Adityaa Magesh Kumar. We build mission-critical systems and
+										observability tools for the AI-native era.
+									</p>
+								</section>
 
-                <section id="services" className="border-t border-line py-16">
-                  <SectionLabel>Services</SectionLabel>
-                  <div className="mt-8 grid gap-6 md:grid-cols-3">
-                    {services.map((service) => (
-                      <article
-                        key={service}
-                        className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:border-white/20"
-                      >
-                        <div className="mb-6 h-10 w-10 rounded-2xl bg-white/10"></div>
-                        <h3 className="text-xl font-semibold text-white">{service}</h3>
-                        <p className="mt-4 text-sm leading-7 text-slate-400">
-                          Advisory and execution designed for resilient systems, intelligent
-                          automation, and measurable operational clarity.
-                        </p>
-                      </article>
-                    ))}
-                  </div>
-                </section>
+								<section id="services" className="border-t border-line py-16">
+									<SectionLabel>Services</SectionLabel>
+									<div className="mt-8 grid gap-6 md:grid-cols-3">
+										{services.map((service) => (
+											<article
+												key={service.title}
+												className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:border-white/20"
+											>
+												<div className="mb-6 h-10 w-10 rounded-2xl bg-white/10"></div>
+												<h3 className="text-xl font-semibold text-white">
+													{service.title}
+												</h3>
+												<p className="mt-4 text-sm leading-7 text-slate-400">
+													{service.description}
+												</p>
+											</article>
+										))}
+									</div>
+								</section>
 
-                <section
-                  id="founder"
-                  className="grid gap-8 border-t border-line py-16 lg:grid-cols-[0.45fr_1fr]"
-                >
-                  <div>
-                    <SectionLabel>Founder</SectionLabel>
-                  </div>
-                  <div className="max-w-3xl">
-                    <p className="text-lg leading-8 text-slate-300">
-                      Founded by Adityaa Magesh Kumar, an Applied AI Engineer at Datadog and
-                      a Georgia Tech MSCS graduate, with a focus on shipping reliable systems
-                      at the intersection of AI, distributed computing, and infrastructure.
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-4">
-                      <a
-                        href="https://adityaamk.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                      >
-                        Personal Site
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/adityaamk/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                      >
-                        LinkedIn
-                      </a>
-                    </div>
-                  </div>
-                </section>
+								<section
+									id="founder"
+									className="grid gap-8 border-t border-line py-16 lg:grid-cols-[0.45fr_1fr]"
+								>
+									<div>
+										<SectionLabel>Founder</SectionLabel>
+									</div>
+									<div className="max-w-3xl">
+										<p className="text-lg leading-8 text-slate-300">
+											Founded by Adityaa Magesh Kumar, an Applied AI Engineer at
+											Datadog and a Georgia Tech MSCS graduate, with a focus on
+											shipping reliable systems at the intersection of AI,
+											distributed computing, and infrastructure.
+										</p>
+										<div className="mt-8 flex flex-wrap gap-4">
+											<a
+												href="https://adityaamk.com"
+												target="_blank"
+												rel="noreferrer"
+												className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+											>
+												Personal Site
+											</a>
+											<a
+												href="https://www.linkedin.com/in/adityaamk/"
+												target="_blank"
+												rel="noreferrer"
+												className="inline-flex items-center justify-center rounded-full border border-line bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+											>
+												LinkedIn
+											</a>
+										</div>
+									</div>
+								</section>
 
-                <section id="clients" className="border-t border-line py-16">
-                  <SectionLabel>Current Clients Include</SectionLabel>
-                  <div className="mt-8 max-w-3xl rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur">
-                    <h3 className="text-2xl font-semibold text-white">Code Ninjas South Brunswick</h3>
-                    <p className="mt-4 text-base leading-7 text-slate-300">
-                      Supporting modern technology initiatives with thoughtful engineering,
-                      scalable systems design, and practical execution.
-                    </p>
-                    <a
-                      href="https://www.google.com/maps/place/Code+Ninjas/@40.4352183,-74.5444262,903m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c3c300be367805:0x989297c5864a2176!8m2!3d40.4352183!4d-74.5418513!16s%2Fg%2F11hctk0k82?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-6 inline-flex items-center text-sm font-semibold text-sky-300 transition hover:text-sky-200"
-                    >
-                      View location
-                    </a>
-                  </div>
-                </section>
-              </main>
+								<section id="clients" className="border-t border-line py-16">
+									<SectionLabel>Current Clients Include</SectionLabel>
+									<div className="mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
+										<div className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur">
+											<h3 className="text-2xl font-semibold text-white">
+												Code Ninjas South Brunswick
+											</h3>
+											<p className="mt-4 text-base leading-7 text-slate-300">
+												Supporting modern technology initiatives with thoughtful
+												engineering, scalable systems design, and practical
+												execution.
+											</p>
+											<a
+												href="https://www.google.com/maps/place/Code+Ninjas/@40.4352183,-74.5444262,903m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c3c300be367805:0x989297c5864a2176!8m2!3d40.4352183!4d-74.5418513!16s%2Fg%2F11hctk0k82?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+												target="_blank"
+												rel="noreferrer"
+												className="mt-6 inline-flex items-center text-sm font-semibold text-sky-300 transition hover:text-sky-200"
+											>
+												View location
+											</a>
+										</div>
+										<div className="rounded-3xl border border-line bg-panel p-8 shadow-soft backdrop-blur">
+											<h3 className="text-2xl font-semibold text-white">
+												UMD Medical Center
+											</h3>
+											<p className="mt-4 text-base leading-7 text-slate-300">
+												Working with research fellow to streamline claims and
+												billing procedures for orthopedic surgeons.
+											</p>
+										</div>
+									</div>
+								</section>
+							</main>
 
-              <footer
-                id="contact"
-                className="mt-8 flex flex-col gap-4 border-t border-line py-10 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <p>AMK Global Ventures LLC</p>
-                <div className="flex flex-col gap-2 sm:items-end">
-                  <a
-                    href="https://amkgv.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium text-white transition hover:text-sky-300"
-                  >
-                    amkgv.com
-                  </a>
-                  <a
-                    href="mailto:adityaa@amkgv.com"
-                    className="transition hover:text-white"
-                  >
-                    adityaa@amkgv.com
-                  </a>
-                </div>
-              </footer>
-            </div>
-          </div>
-        );
-      }
+							<footer
+								id="contact"
+								className="mt-8 flex flex-col gap-4 border-t border-line py-10 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between"
+							>
+								<p>AMK Global Ventures LLC</p>
+								<div className="flex flex-col gap-2 sm:items-end">
+									<a
+										href="https://amkgv.com"
+										target="_blank"
+										rel="noreferrer"
+										className="font-medium text-white transition hover:text-sky-300"
+									>
+										amkgv.com
+									</a>
+									<a
+										href="mailto:adityaa@amkgv.com"
+										className="transition hover:text-white"
+									>
+										adityaa@amkgv.com
+									</a>
+								</div>
+							</footer>
+						</div>
+					</div>
+				);
+			}
 
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<App />);
-    </script>
-  </body>
+			const root = ReactDOM.createRoot(document.getElementById("root"));
+			root.render(<App />);
+		</script>
+	</body>
 </html>
